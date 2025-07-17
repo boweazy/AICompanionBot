@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Bell, Crown } from "lucide-react";
 import type { DashboardStats } from "@/lib/types";
+import AIChat from "@/components/ai-chat";
 
 export default function Dashboard() {
   const { data: stats, isLoading: statsLoading } = useQuery<DashboardStats>({
@@ -109,6 +110,9 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* AI Chat Assistant */}
+      <AIChat />
     </div>
   );
 }

@@ -1,0 +1,94 @@
+import os
+import google.generativeai as genai
+from flask import Flask, request, render_template_string, session
+
+# --- Flask App Setup ---
+app = Flask(__name__)
+# This is needed for the session (chat history) to work.
+app.config['SECRET_KEY'] = 'your-super-secret-key-for-the-chatbot' 
+
+# --- AI Configuration ---
+# The code will automatically get your key from Replit Secrets
+try:
+    GOOGLE_API_KEY = os.environ['GOOGLE_API_KEY']
+    genai.configure(api_key=GOOGLE_API_KEY)
+    model = genai.GenerativeModel('gemini-pro')
+except KeyError:
+    # This will be displayed on the webpage if the secret key is not set
+    model = None 
+
+# --- HTML & CSS Template (SmartFlow Branded) ---
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartFlow AI Companion</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #0f0f0f; color: #d4af37; display: flex; flex-direction: column; height: 100vh; }
+        .container { max-width: 800px; margin: auto; padding: 1rem; width: 100%; display: flex; flex-direction: column; flex-grow: 1; }
+        header { text-align: center; padding: 1rem 0; }
+        h1 { margin: 0; font-size: 2.5rem; color: #ffd700; }
+        .chat-window { flex-grow: 1; background: #121212; border: 1px solid #d4af37; border-radius: 10px; padding: 1rem; overflow-y: auto; margin-bottom: 1rem; }
+        .message { margin-bottom: 1rem; padding: 0.75rem 1rem; border-radius: 8px; max-width: 80%; }
+        .user-message { background: #2c3e50; color: #ecf0f1; float: right; clear: both; }
+        .model-message { background: #34495e; color: #ecf0f1; float: left; clear: both; }
+        .chat-form { display: flex; }
+        input[type="text"] { flex-grow: 1; padding: 1rem; border-radius: 8px 0 0 8px; border: 1px solid #d4af37; background-color: #1b1b1b; color: #f2e58b; font-size: 1rem; }
+        input[type="submit"] { background: #ffd700; border: 2px solid #ffd700; color: #111; cursor: pointer; font-weight: bold; border-radius: 0 8px 8px 0; padding: 0 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>SmartFlow AI Companion</h1></header>
+
+        <div class="chat-window">
+            {% if model %}
+                {% for message in history %}
+                    <div class="message {{ 'user-message' if message.role == 'user' else 'model-message' }}">
+                        {{ message.parts[0].text }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="message model-message">
+                    Error: GOOGLE_API_KEY is not set. Please set it in Replit Secrets.
+                </div>
+            {% endif %}
+        </div>
+        
+        <form class="chat-form" method="post">
+            <input type="text" name="user_input" placeholder="Type your message..." autocomplete="off" required>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</body>
+</html>
+"""
+
+# --- Flask Routes ---
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    # Initialize chat history in the session if it doesn't exist
+    if 'history' not in session:
+        session['history'] = []
+
+    if request.method == 'POST' and model:
+        user_input = request.form.get('user_input')
+        if user_input:
+            # Start a chat session with the model using the history
+            chat = model.start_chat(history=session['history'])
+            
+            # Send user message and get model's response
+            response = chat.send_message(user_input)
+            
+            # Update history in the session
+            session['history'] = chat.history
+            # This is needed to make sure the session is saved
+            session.modified = True
+
+    return render_template_string(HTML_TEMPLATE, history=session.get('history', []), model=model)
+
+# --- Main Execution Block ---
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

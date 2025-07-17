@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertBotSchema, insertPostSchema, insertActivitySchema, insertCommentSchema } from "@shared/schema";
 import { z } from "zod";
+import { createChatSession, sendMessage, getChatSession, type ChatMessage } from "./ai-chat";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -204,6 +205,53 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch dashboard stats" });
+    }
+  });
+
+  // AI Chat endpoints
+  app.post("/api/chat/create", async (req, res) => {
+    try {
+      const sessionId = await createChatSession();
+      const session = getChatSession(sessionId);
+      res.json({ sessionId, messages: session?.messages || [] });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to create chat session" });
+    }
+  });
+
+  app.post("/api/chat/:sessionId/message", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const { message } = req.body;
+      
+      if (!message || typeof message !== 'string') {
+        return res.status(400).json({ error: "Message is required" });
+      }
+
+      const aiResponse = await sendMessage(sessionId, message);
+      const session = getChatSession(sessionId);
+      
+      res.json({ 
+        message: aiResponse,
+        session: session ? { id: session.id, messages: session.messages } : null
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to send message" });
+    }
+  });
+
+  app.get("/api/chat/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const session = getChatSession(sessionId);
+      
+      if (!session) {
+        return res.status(404).json({ error: "Chat session not found" });
+      }
+      
+      res.json(session);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to get chat session" });
     }
   });
 
