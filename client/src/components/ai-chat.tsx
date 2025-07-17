@@ -45,8 +45,12 @@ export default function AIChat() {
         body: { message },
       }),
     onSuccess: () => {
+      console.log("Message sent successfully");
       queryClient.invalidateQueries({ queryKey: ["chat", sessionId] });
       setInputMessage("");
+    },
+    onError: (error) => {
+      console.error("Failed to send message:", error);
     },
   });
 
@@ -67,11 +71,16 @@ export default function AIChat() {
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!inputMessage.trim() || !sessionId) return;
+    const trimmedMessage = inputMessage.trim();
+    if (!trimmedMessage || !sessionId) {
+      console.log("Cannot send message:", { inputMessage: trimmedMessage, sessionId });
+      return;
+    }
 
+    console.log("Sending message:", { sessionId, message: trimmedMessage });
     sendMessageMutation.mutate({
       sessionId,
-      message: inputMessage.trim(),
+      message: trimmedMessage,
     });
   };
 
@@ -194,6 +203,12 @@ export default function AIChat() {
                 <Input
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSendMessage(e as any);
+                    }
+                  }}
                   placeholder="Ask about bot creation, social media automation..."
                   className="flex-1 bg-sfs-brown-card border-sfs-gold/30 text-gold-shine placeholder:text-gold-shine/50"
                   disabled={sendMessageMutation.isPending || !sessionId}
