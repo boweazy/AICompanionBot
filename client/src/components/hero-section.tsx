@@ -23,7 +23,7 @@ export default function HeroSection() {
               Build AI Bots That
               <span className="block text-gold-shine">Scale Your Social Presence</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gold-shine opacity-80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gold-shine max-w-3xl mx-auto leading-relaxed">
               Master social media automation with our interactive simulation platform. 
               Create, deploy, and optimize intelligent bots that drive real engagement.
             </p>
@@ -45,18 +45,18 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12 mt-12 border-t border-sfs-gold/20">
             <div className="bubble-section text-center p-4">
               <div className="text-3xl font-bold text-gold-shine">10,000+</div>
-              <div className="text-gold-shine opacity-70">Bots Deployed</div>
+              <div className="text-gold-shine">Bots Deployed</div>
             </div>
             <div className="bubble-section text-center p-4">
               <div className="text-3xl font-bold text-gold-shine">95%</div>
-              <div className="text-gold-shine opacity-70">Success Rate</div>
+              <div className="text-gold-shine">Success Rate</div>
             </div>
             <div className="bubble-section text-center p-4">
               <div className="flex items-center justify-center gap-1 text-3xl font-bold text-gold-shine">
                 <TrendingUp className="w-8 h-8" />
                 300%
               </div>
-              <div className="text-gold-shine opacity-70">Avg. Engagement Boost</div>
+              <div className="text-gold-shine">Avg. Engagement Boost</div>
             </div>
           </div>
         </div>

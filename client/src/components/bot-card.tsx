@@ -43,18 +43,18 @@ export default function BotCard({ bot }: BotCardProps) {
           {bot.isActive ? "Active" : "Paused"}
         </Badge>
       </div>
-      <p className="text-sm text-gold-shine opacity-70 mb-4 leading-relaxed">{bot.description}</p>
+      <p className="text-sm text-gold-shine mb-4 leading-relaxed">{bot.description}</p>
       
       <div className="grid grid-cols-2 gap-4 text-sm mb-4">
         {bot.type === "content_creator" && (
           <>
             <div className="text-center">
               <div className="text-xl font-bold text-gold-shine">{stats.postsCount || 0}</div>
-              <div className="text-xs text-gold-shine opacity-70">Posts</div>
+              <div className="text-xs text-gold-shine">Posts</div>
             </div>
             <div className="text-center">
               <div className="text-xl font-bold text-gold-shine">{stats.engagementRate || 0}%</div>
-              <div className="text-xs text-gold-shine opacity-70">Engagement</div>
+              <div className="text-xs text-gold-shine">Engagement</div>
             </div>
           </>
         )}
@@ -62,11 +62,11 @@ export default function BotCard({ bot }: BotCardProps) {
           <>
             <div className="text-center">
               <div className="text-xl font-bold text-gold-shine">{stats.likesCount || 0}</div>
-              <div className="text-xs text-gold-shine opacity-70">Likes</div>
+              <div className="text-xs text-gold-shine">Likes</div>
             </div>
             <div className="text-center">
               <div className="text-xl font-bold text-gold-shine">{stats.commentsCount || 0}</div>
-              <div className="text-xs text-gold-shine opacity-70">Comments</div>
+              <div className="text-xs text-gold-shine">Comments</div>
             </div>
           </>
         )}

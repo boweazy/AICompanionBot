@@ -63,7 +63,7 @@ export default function PremiumTabs() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-heading text-2xl text-gold-shine">Active Bots</h2>
-              <p className="text-gold-shine opacity-70">Manage your deployed automation bots</p>
+              <p className="text-gold-shine">Manage your deployed automation bots</p>
             </div>
             <Badge className="bg-sfs-gold/10 text-gold-shine border-sfs-gold/30">
               {activeBots.length} Active

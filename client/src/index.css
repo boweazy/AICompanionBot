@@ -220,49 +220,59 @@
     border-color: hsl(var(--sfs-gold));
   }
   
-  /* Premium Bubble Effects - Dark Brown with Gold */
+  /* Premium Bubble Effects - Dull Black with Gold */
   .glass-card, .bubble-section {
-    background: rgba(45, 27, 15, 0.9); /* Dark brown bubble */
+    background: rgba(20, 20, 20, 0.95); /* Dull black bubble */
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 215, 0, 0.6); /* Shining gold border */
+    border: 2px solid rgba(255, 215, 0, 0.8); /* Shining gold border */
     border-radius: 20px; /* More rounded for bubble effect */
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      0 0 20px rgba(255, 215, 0, 0.2),
-      inset 0 1px 0 rgba(255, 215, 0, 0.3); /* Gold inner glow */
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(255, 215, 0, 0.3),
+      inset 0 1px 0 rgba(255, 215, 0, 0.4); /* Gold inner glow */
   }
   
   .glass-card-brown, .bubble-card {
-    background: rgba(45, 27, 15, 0.95); /* Slightly more opaque */
+    background: rgba(15, 15, 15, 0.98); /* Darker dull black */
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 215, 0, 0.8); /* Brighter gold border */
+    border: 2px solid rgba(255, 215, 0, 0.9); /* Brighter gold border */
     border-radius: 24px;
     box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.4),
-      0 0 30px rgba(255, 215, 0, 0.3),
-      inset 0 2px 0 rgba(255, 215, 0, 0.4);
+      0 12px 48px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(255, 215, 0, 0.4),
+      inset 0 2px 0 rgba(255, 215, 0, 0.5);
   }
   
-  /* Shining gold text effect */
+  /* Shining gold text effect - No fading */
   .text-gold-shine, .text-sfs-gold {
-    color: #FFD700;
+    color: #FFD700 !important;
+    opacity: 1 !important;
     text-shadow: 
-      0 0 10px rgba(255, 215, 0, 0.6),
-      0 0 20px rgba(255, 215, 0, 0.4),
-      0 0 30px rgba(255, 215, 0, 0.2);
+      0 0 10px rgba(255, 215, 0, 0.8),
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 30px rgba(255, 215, 0, 0.4);
   }
   
-  /* Light mode glass effects */
+  /* Ensure no text fading */
+  .text-gold-shine.opacity-70,
+  .text-gold-shine.opacity-80,
+  .text-sfs-gold.opacity-70,
+  .text-sfs-gold.opacity-80 {
+    opacity: 1 !important;
+    color: #FFD700 !important;
+  }
+  
+  /* Light mode - also use dull black bubbles */
   :not(.dark) .glass-card, :not(.dark) .bubble-section {
-    background: rgba(250, 245, 240, 0.95);
-    border: 2px solid rgba(139, 69, 19, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(25, 25, 25, 0.95);
+    border: 2px solid rgba(255, 215, 0, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
   
   :not(.dark) .glass-card-brown, :not(.dark) .bubble-card {
-    background: rgba(255, 250, 245, 0.98);
-    border: 2px solid rgba(139, 69, 19, 0.6);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    background: rgba(20, 20, 20, 0.98);
+    border: 2px solid rgba(255, 215, 0, 0.9);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
   }
   
   /* Animation utilities */

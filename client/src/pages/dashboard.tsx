@@ -25,7 +25,7 @@ export default function Dashboard() {
               <div className="flex items-center space-x-4">
                 <div>
                   <h2 className="text-display text-2xl text-gold-shine">Dashboard</h2>
-                  <p className="text-gold-shine opacity-80 mt-1">Master social media automation with intelligent bots</p>
+                  <p className="text-gold-shine mt-1">Master social media automation with intelligent bots</p>
                 </div>
                 <Badge className="bg-sfs-gold/10 text-gold-shine border-sfs-gold/30">
                   <Crown className="w-3 h-3 mr-1" />
@@ -68,7 +68,7 @@ export default function Dashboard() {
                     <div className="p-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-gold-shine">{stats?.totalInteractions || 0}</div>
-                        <div className="text-sm text-gold-shine opacity-70">Total Interactions</div>
+                        <div className="text-sm text-gold-shine">Total Interactions</div>
                       </div>
                     </div>
                   </div>
@@ -76,7 +76,7 @@ export default function Dashboard() {
                     <div className="p-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-gold-shine">{stats?.successRate || "0%"}</div>
-                        <div className="text-sm text-gold-shine opacity-70">Success Rate</div>
+                        <div className="text-sm text-gold-shine">Success Rate</div>
                       </div>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ export default function Dashboard() {
                     <div className="p-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-gold-shine">{stats?.activeHours || "0h"}</div>
-                        <div className="text-sm text-gold-shine opacity-70">Active Hours</div>
+                        <div className="text-sm text-gold-shine">Active Hours</div>
                       </div>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ export default function Dashboard() {
                     <div className="p-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-gold-shine">{stats?.costSavings || "$0"}</div>
-                        <div className="text-sm text-gold-shine opacity-70">Cost Savings</div>
+                        <div className="text-sm text-gold-shine">Cost Savings</div>
                       </div>
                     </div>
                   </div>

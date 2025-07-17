@@ -54,7 +54,7 @@ export default function ActivityFeed() {
         ) : (
           <div className="space-y-3 max-h-40 overflow-y-auto">
             {activities.length === 0 ? (
-              <p className="text-sm text-gold-shine opacity-70 text-center py-4">
+              <p className="text-sm text-gold-shine text-center py-4">
                 No recent activity
               </p>
             ) : (
@@ -62,7 +62,7 @@ export default function ActivityFeed() {
                 <div key={activity.id} className="flex items-center space-x-3 text-sm">
                   <div className={`w-2 h-2 rounded-full ${getActivityColor(activity.type)}`}></div>
                   <span className="flex-1 text-gold-shine">{activity.description}</span>
-                  <span className="text-xs text-gold-shine opacity-70">
+                  <span className="text-xs text-gold-shine">
                     {activity.createdAt ? formatTimeAgo(activity.createdAt) : "now"}
                   </span>
                 </div>

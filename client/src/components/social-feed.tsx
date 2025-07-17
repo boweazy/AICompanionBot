@@ -62,7 +62,7 @@ export default function SocialFeed() {
                     />
                     <div>
                       <h4 className="text-heading font-semibold text-gold-shine">{post.author}</h4>
-                      <p className="text-xs text-gold-shine opacity-70">
+                      <p className="text-xs text-gold-shine">
                         {post.createdAt ? formatTimeAgo(post.createdAt) : "just now"}
                       </p>
                     </div>
@@ -73,7 +73,7 @@ export default function SocialFeed() {
                     )}
                   </div>
                   
-                  <p className="text-sm mb-4 text-gold-shine opacity-80 leading-relaxed">{post.content}</p>
+                  <p className="text-sm mb-4 text-gold-shine leading-relaxed">{post.content}</p>
                   
                   <div className="flex items-center space-x-4 text-xs">
                     <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-red-400 hover:text-red-300 p-0 h-auto transition-colors">

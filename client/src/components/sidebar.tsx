@@ -59,7 +59,7 @@ export default function Sidebar() {
           </div>
           <div className="flex-1">
             <p className="text-sm font-medium text-gold-shine">Learning User</p>
-            <p className="text-xs text-gold-shine opacity-80">Premium Member</p>
+            <p className="text-xs text-gold-shine">Premium Member</p>
           </div>
           <ChevronRight className="text-xs text-gold-shine hover:text-sfs-gold-bright transition-colors" />
         </div>
