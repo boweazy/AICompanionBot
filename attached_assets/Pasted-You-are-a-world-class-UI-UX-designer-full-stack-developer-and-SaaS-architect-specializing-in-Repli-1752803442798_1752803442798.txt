@@ -1,0 +1,33 @@
+You are a world-class UI/UX designer, full-stack developer, and SaaS architect specializing in Replit-based apps. Take full control to refactor and enhance this Smart Flow Systems (SFS) Bot Learning Platform into a monetizable MVP for e-commerce social media automation. Fix critical deployment issues first, then implement lean features. Goal: Polished app that's accessible, crawlable, and revenue-ready.
+
+Core Brand Theme:
+- Primary: Black (#000000) for backgrounds/text.
+- Secondary: Dark Brown (#3E2723) for cards/borders.
+- Accent: Gold (#FFD700) for buttons/highlights/CTAs.
+- Neutral: Soft gray (#808080) for secondary elements.
+- Typography: 'Inter' or 'Roboto'; bold headers.
+- Vibe: Sleek dark-mode, minimalistic like high-end tech tools.
+
+Key Changes (Build on Existing Code):
+1. **Deployment and Accessibility Fixes**:
+   - Blank Page Root Cause: Add server-side rendering or static fallback. Use React's hydrate or switch to Next.js (install via package.json if needed). Create an index.html with basic content: Hero section saying "SFS AutoBots: Automate E-Com Growth with AI Bots" in gold on black, plus a "Get Started" button.
+   - Ensure SEO: Add meta tags (title: "SFS AutoBots - No-Code Social Automation"), alt text for all elements.
+   - Test External Access: Simulate non-JS load; ensure curl/wget shows text. Fix any console errors (e.g., missing deps).
+   - Mobile/Perf: Media queries for responsiveness; lazy load images/components.
+
+2. **Color/UX Overhaul**: Apply theme everywhere (e.g., dashboard cards in dark brown with gold borders). Tabbed layout: 'Dashboard', 'Marketplace', 'Analytics'. Stepper for bot creation. Freemium: Limit free bots to 3; gold upgrade modal.
+
+3. **Prioritized Feature Implementation** (E-Com Focus):
+   - Bot Analytics: 'Analytics' tab with Chart.js graphs for engagement/ROI.
+   - Marketplace: Pre-built e-com templates (e.g., 'TikTok Sales Bot'); user sharing.
+   - Scheduling Rules: Cron UI with if-then automation (e.g., "Post if likes >100").
+   - Personality Designer: Sliders for traits; preview simulations.
+   - Integration Wizard: Stepper for social APIs (mock X/Instagram).
+
+4. **Monetization/Enhancements**:
+   - Add Stripe integration (use Replit docs); $49/mo Pro tier.
+   - Error Handling: Gold toasts for feedback.
+   - Code Structure: Separate files (Theme.ts, BotService.ts); install deps like 'react-chartjs-2', 'date-fns'.
+   - Testing: Unit tests; ensure no breaks in simulation/feeds.
+
+Output: Summary of fixes (why each boosts accessibility/monetization), key file diffs, deploy/preview the updated app. Redeploy immediately after changes.

@@ -2,10 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    
+    <!-- SEO Meta Tags -->
+    <title>SFS AutoBots - No-Code Social Media Automation for E-Commerce</title>
+    <meta name="description" content="Automate your e-commerce social media growth with AI-powered bots. Create content, engage customers, and boost sales across platforms with SFS AutoBots." />
+    <meta name="keywords" content="social media automation, e-commerce bots, AI marketing, automated engagement, social commerce, TikTok automation, Instagram bots" />
+    <meta name="author" content="Smart Flow Systems" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="SFS AutoBots - E-Commerce Social Media Automation" />
+    <meta property="og:description" content="Automate e-commerce growth with AI bots for social media engagement, content creation, and sales optimization." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sfs-autobots.replit.app" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SFS AutoBots - E-Commerce Social Media Automation" />
+    <meta name="twitter:description" content="AI-powered social media bots for e-commerce growth and automation." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fallback styles for No-JS -->
+    <style>
+      .noscript-fallback { 
+        margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #000; color: #FFD700;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; 
+        min-height: 100vh; text-align: center; padding: 2rem; 
+      }
+      .noscript-fallback h1 { font-size: 3rem; font-weight: bold; margin-bottom: 1rem; }
+      .noscript-fallback p { font-size: 1.25rem; margin-bottom: 2rem; color: #808080; }
+      .noscript-fallback button { background: #FFD700; color: #000; padding: 1rem 2rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- No-JS Fallback -->
+    <noscript>
+      <div class="noscript-fallback">
+        <h1>SFS AutoBots</h1>
+        <p>Automate E-Commerce Growth with AI Bots</p>
+        <p>Enable JavaScript to access the full platform</p>
+        <button onclick="location.reload()">Reload Page</button>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <!-- Loading Fallback -->
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #000; color: #FFD700; font-family: 'Inter', sans-serif; text-align: center;">
+        <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">SFS AutoBots</h1>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem; color: #808080;">Automate E-Commerce Growth with AI Bots</p>
+        <div style="width: 40px; height: 40px; border: 4px solid #3E2723; border-top: 4px solid #FFD700; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <style>
+          @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        </style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>

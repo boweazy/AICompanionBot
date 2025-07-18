@@ -7,6 +7,7 @@ import SocialFeed from "@/components/social-feed";
 import ActivityFeed from "@/components/activity-feed";
 import EnhancedAnalytics from "@/components/enhanced-analytics";
 import BotConfiguration from "@/components/bot-configuration";
+import SchedulingRules from "@/components/scheduling-rules";
 import UpgradeModal from "@/components/upgrade-modal";
 import IntegrationWizard from "@/components/integration-wizard";
 import { useQuery } from "@tanstack/react-query";
@@ -29,7 +30,7 @@ export default function PremiumTabs() {
   return (
     <div className="w-full bubble-section p-6">
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 bg-sfs-brown-card border border-sfs-gold/30 bubble-section">
+        <TabsList className="grid w-full grid-cols-6 bg-sfs-brown-card border border-sfs-gold/30 bubble-section">
           <TabsTrigger 
             value="overview" 
             className="data-[state=active]:bg-sfs-gold data-[state=active]:text-sfs-black text-gold-shine"
@@ -50,6 +51,13 @@ export default function PremiumTabs() {
           >
             <BarChart3 className="w-4 h-4 mr-2" />
             Analytics
+          </TabsTrigger>
+          <TabsTrigger 
+            value="scheduling" 
+            className="data-[state=active]:bg-sfs-gold data-[state=active]:text-sfs-black text-gold-shine"
+          >
+            <Zap className="w-4 h-4 mr-2" />
+            Scheduling
           </TabsTrigger>
           <TabsTrigger 
             value="integrations" 
@@ -125,6 +133,49 @@ export default function PremiumTabs() {
               )}
             </div>
             <EnhancedAnalytics />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="scheduling" className="mt-6">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-heading text-2xl text-gold-shine">Smart Scheduling</h2>
+                <p className="text-gold-shine">Automate bot actions with intelligent triggers and conditions</p>
+              </div>
+              <Badge className="bg-sfs-gold/10 text-gold-shine border-sfs-gold/30">
+                <Zap className="w-3 h-3 mr-1" />
+                AI-Powered Rules
+              </Badge>
+            </div>
+            <div className="text-center py-12">
+              <Zap className="w-16 h-16 text-gold-shine mx-auto mb-6" />
+              <h3 className="text-2xl font-semibold text-gold-shine mb-4">
+                Smart Scheduling Rules
+              </h3>
+              <p className="text-gold-shine mb-8 max-w-2xl mx-auto">
+                Create intelligent automation rules with AI-powered triggers and conditions. 
+                Schedule bot actions based on engagement patterns, trending content, and sales opportunities.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bubble-section p-6">
+                  <div className="w-12 h-12 bg-sfs-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="w-6 h-6 text-sfs-black" />
+                  </div>
+                  <h4 className="font-semibold text-gold-shine mb-2">Peak Hour Targeting</h4>
+                  <p className="text-gold-shine text-sm">Auto-engage when your audience is most active</p>
+                </div>
+                
+                <div className="bubble-section p-6">
+                  <div className="w-12 h-12 bg-sfs-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Settings className="w-6 h-6 text-sfs-black" />
+                  </div>
+                  <h4 className="font-semibold text-gold-shine mb-2">Sales Triggers</h4>
+                  <p className="text-gold-shine text-sm">Respond to purchase intent signals automatically</p>
+                </div>
+              </div>
+            </div>
           </div>
         </TabsContent>
 

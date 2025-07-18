@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Bot as BotIcon, Home, Plus, BarChart3, Newspaper, Settings, User, ChevronRight } from "lucide-react";
+import { Bot as BotIcon, Home, Plus, BarChart3, Newspaper, Settings, User, ChevronRight, ShoppingCart } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const navigationItems = [
@@ -7,6 +7,7 @@ const navigationItems = [
   { href: "/create-bot", icon: Plus, label: "Create Bot" },
   { href: "/my-bots", icon: BotIcon, label: "My Bots" },
   { href: "/analytics", icon: BarChart3, label: "Analytics" },
+  { href: "/marketplace", icon: ShoppingCart, label: "Marketplace" },
   { href: "/social-feed", icon: Newspaper, label: "Social Feed" },
   { href: "/settings", icon: Settings, label: "Settings" },
 ];
