@@ -3,302 +3,111 @@
 @tailwind utilities;
 
 :root {
-  /* Light theme colors */
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(0, 0%, 3.9%);
-  --muted: hsl(0, 0%, 96.1%);
-  --muted-foreground: hsl(0, 0%, 45.1%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(0, 0%, 3.9%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(0, 0%, 3.9%);
-  --border: hsl(0, 0%, 89.8%);
-  --input: hsl(0, 0%, 89.8%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(0, 0%, 96.1%);
-  --secondary-foreground: hsl(0, 0%, 9%);
-  --accent: hsl(0, 0%, 96.1%);
-  --accent-foreground: hsl(0, 0%, 9%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(51, 100%, 50%);
-  --radius: 0.75rem;
-  
-  /* Smart Flow Systems Brand Colors - Light Mode */
-  --sfs-black: hsl(0, 0%, 3.9%);
-  --sfs-brown: hsl(20, 14.3%, 85%);
-  --sfs-brown-light: hsl(20, 14.3%, 90%);
-  --sfs-brown-card: hsl(20, 14.3%, 95%);
-  --sfs-gold: hsl(45, 93%, 47%);
-  --sfs-gold-bright: hsl(45, 100%, 51%);
-  --sfs-gold-dark: hsl(45, 100%, 35%);
-  --sfs-gray: hsl(0, 0%, 45.1%);
-  --sfs-gray-light: hsl(0, 0%, 35%);
-  --sfs-surface: hsl(0, 0%, 98%);
-  --sfs-surface-elevated: hsl(0, 0%, 96%);
-}
+  /* SFS Theme - Dark Brown & Black with Gold */
+  --sfs-brown: #4B2E2E;
+  --sfs-black: #0A0A0A;
+  --sfs-gold-100: #FFF7CC;
+  --sfs-gold-300: #FFE58A;
+  --sfs-gold-500: #FFD700;
+  --sfs-gold-600: #E6C200;
+  --sfs-gold-700: #B58E00;
+  --sfs-gold-800: #7A5A00;
+  --sfs-gold-gradient: linear-gradient(90deg,#7a5a00 0%,#b58e00 16%,#ffd700 33%,#fff1a6 45%,#e6c200 55%,#b58e00 72%,#7a5a00 100%);
 
-.dark {
-  /* Dark theme colors */
-  --background: hsl(0, 0%, 0%);
-  --foreground: hsl(51, 100%, 50%);
-  --muted: hsl(20, 14.3%, 15%);
-  --muted-foreground: hsl(0, 0%, 50.2%);
-  --popover: hsl(20, 14.3%, 4.1%);
-  --popover-foreground: hsl(51, 100%, 50%);
-  --card: hsl(20, 14.3%, 4.1%);
-  --card-foreground: hsl(51, 100%, 50%);
-  --border: hsl(20, 14.3%, 15%);
-  --input: hsl(20, 14.3%, 8%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(20, 14.3%, 8%);
-  --secondary-foreground: hsl(51, 100%, 50%);
-  --accent: hsl(20, 14.3%, 15%);
-  --accent-foreground: hsl(51, 100%, 50%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(51, 100%, 50%);
-  
-  /* Smart Flow Systems Premium Brand Colors - Dark Mode */
-  --sfs-black: hsl(0, 0%, 0%);
-  --sfs-brown: hsl(20, 14.3%, 12%); /* Darker brown for bubbles */
-  --sfs-brown-light: hsl(20, 14.3%, 15%);
-  --sfs-brown-card: hsl(20, 14.3%, 10%);
-  --sfs-gold: hsl(45, 100%, 60%); /* Brighter shining gold */
-  --sfs-gold-bright: hsl(45, 100%, 70%); /* Extra bright for hover */
-  --sfs-gold-dark: hsl(45, 100%, 50%);
-  --sfs-gray: hsl(45, 30%, 60%); /* Warm gold-tinted gray */
-  --sfs-gray-light: hsl(45, 20%, 70%);
-  --sfs-surface: hsl(20, 20%, 8%); /* Dark brown surface */
-  --sfs-surface-elevated: hsl(20, 15%, 10%);
-}
-
-.dark {
-  --background: hsl(0, 0%, 0%);
-  --foreground: hsl(51, 100%, 50%);
-  --muted: hsl(30, 30%, 10%);
-  --muted-foreground: hsl(51, 100%, 70%);
-  --popover: hsl(30, 30%, 8%);
-  --popover-foreground: hsl(51, 100%, 50%);
-  --card: hsl(30, 40%, 8%);
-  --card-foreground: hsl(51, 100%, 50%);
-  --border: hsl(45, 100%, 27%);
-  --input: hsl(30, 40%, 12%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(30, 40%, 12%);
-  --secondary-foreground: hsl(51, 100%, 50%);
-  --accent: hsl(30, 40%, 15%);
-  --accent-foreground: hsl(51, 100%, 50%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(51, 100%, 50%);
+  /* Semantic Colors */
+  --background: #4B2E2E;
+  --foreground: #FFF7CC;
+  --card: #0A0A0A;
+  --card-foreground: #FFF7CC;
+  --popover: #0A0A0A;
+  --popover-foreground: #FFF7CC;
+  --primary: #FFD700;
+  --primary-foreground: #0A0A0A;
+  --secondary: #0A0A0A;
+  --secondary-foreground: #FFF7CC;
+  --muted: #121212;
+  --muted-foreground: #FFE58A;
+  --accent: #B58E00;
+  --accent-foreground: #0A0A0A;
+  --destructive: #ef4444;
+  --destructive-foreground: #FFF7CC;
+  --border: #7A5A00;
+  --input: #121212;
+  --ring: #E6C200;
+  --radius: 0.6rem;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Dark mode by default for SFS */
-  html {
-    @apply dark;
-  }
-  
-  .dark body {
-    background-color: #2D1B0F; /* Very dark brown */
-    color: hsl(var(--sfs-gold));
-  }
   
   body {
-    background-color: hsl(var(--sfs-surface));
-    color: hsl(var(--sfs-black));
+    @apply bg-[#4B2E2E] text-[#FFF7CC] font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
   }
 }
 
-@layer utilities {
-  /* Smart Flow Systems Premium Utilities */
-  .bg-sfs-black {
-    background-color: hsl(var(--sfs-black));
+@layer components {
+  /* Metallic Gold Text */
+  .text-gold {
+    background: var(--sfs-gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-  
-  .bg-sfs-brown {
-    background-color: hsl(var(--sfs-brown));
+
+  /* Animated Gold Shine */
+  .text-gold-shine {
+    position: relative;
+    background: var(--sfs-gold-gradient);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gold-pan 3.2s linear infinite;
   }
-  
-  .bg-sfs-brown-light {
-    background-color: hsl(var(--sfs-brown-light));
+
+  /* Buttons */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 font-bold;
+    @apply rounded-lg border-none cursor-pointer transition-all duration-200;
+    background: var(--sfs-gold-gradient);
+    color: #0A0A0A;
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
   }
-  
-  .bg-sfs-brown-card {
-    background-color: hsl(var(--sfs-brown-card));
+
+  .btn-gold:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 0 18px 0 rgba(255, 215, 0, 0.35);
   }
-  
-  .bg-sfs-gold {
-    background-color: hsl(var(--sfs-gold));
+
+  .btn-gold:active {
+    transform: translateY(1px) scale(0.99);
   }
-  
-  .bg-sfs-gold-bright {
-    background-color: hsl(var(--sfs-gold-bright));
+
+  /* Dark Panel */
+  .panel-dark {
+    background: radial-gradient(60% 80% at 50% 20%, #121212 0%, #0A0A0A 60%, #080808 100%);
   }
-  
-  .bg-sfs-gold-dark {
-    background-color: hsl(var(--sfs-gold-dark));
+
+  /* Loading Skeleton */
+  .skeleton {
+    background: linear-gradient(90deg, #121212 25%, #1a1515 50%, #121212 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
   }
-  
-  .bg-sfs-surface {
-    background-color: hsl(var(--sfs-surface));
-  }
-  
-  .bg-sfs-surface-elevated {
-    background-color: hsl(var(--sfs-surface-elevated));
-  }
-  
-  .text-sfs-black {
-    color: hsl(var(--sfs-black));
-  }
-  
-  .text-sfs-brown {
-    color: hsl(var(--sfs-brown));
-  }
-  
-  .text-sfs-gold {
-    color: hsl(var(--sfs-gold));
-  }
-  
-  .text-sfs-gold-bright {
-    color: hsl(var(--sfs-gold-bright));
-  }
-  
-  .text-sfs-gold-dark {
-    color: hsl(var(--sfs-gold-dark));
-  }
-  
-  .text-sfs-gray {
-    color: hsl(var(--sfs-gray));
-  }
-  
-  .text-sfs-gray-light {
-    color: hsl(var(--sfs-gray-light));
-  }
-  
-  .border-sfs-gold {
-    border-color: hsl(var(--sfs-gold));
-  }
-  
-  .border-sfs-gold-dark {
-    border-color: hsl(var(--sfs-gold-dark));
-  }
-  
-  .border-sfs-brown {
-    border-color: hsl(var(--sfs-brown));
-  }
-  
-  .hover\:bg-sfs-brown-light:hover {
-    background-color: hsl(var(--sfs-brown-light));
-  }
-  
-  .hover\:bg-sfs-gold-bright:hover {
-    background-color: hsl(var(--sfs-gold-bright));
-  }
-  
-  .hover\:text-sfs-gold-bright:hover {
-    color: hsl(var(--sfs-gold-bright));
-  }
-  
-  .hover\:border-sfs-gold:hover {
-    border-color: hsl(var(--sfs-gold));
-  }
-  
-  /* Premium Bubble Effects - Dull Black with Gold */
-  .glass-card, .bubble-section {
-    background: rgba(20, 20, 20, 0.95); /* Dull black bubble */
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 215, 0, 0.8); /* Shining gold border */
-    border-radius: 20px; /* More rounded for bubble effect */
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(255, 215, 0, 0.3),
-      inset 0 1px 0 rgba(255, 215, 0, 0.4); /* Gold inner glow */
-  }
-  
-  .glass-card-brown, .bubble-card {
-    background: rgba(15, 15, 15, 0.98); /* Darker dull black */
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 215, 0, 0.9); /* Brighter gold border */
-    border-radius: 24px;
-    box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.6),
-      0 0 30px rgba(255, 215, 0, 0.4),
-      inset 0 2px 0 rgba(255, 215, 0, 0.5);
-  }
-  
-  /* Shining gold text effect - No fading */
-  .text-gold-shine, .text-sfs-gold {
-    color: #FFD700 !important;
-    opacity: 1 !important;
-    text-shadow: 
-      0 0 10px rgba(255, 215, 0, 0.8),
-      0 0 20px rgba(255, 215, 0, 0.6),
-      0 0 30px rgba(255, 215, 0, 0.4);
-  }
-  
-  /* Ensure no text fading */
-  .text-gold-shine.opacity-70,
-  .text-gold-shine.opacity-80,
-  .text-sfs-gold.opacity-70,
-  .text-sfs-gold.opacity-80 {
-    opacity: 1 !important;
-    color: #FFD700 !important;
-  }
-  
-  /* Light mode - also use dull black bubbles */
-  :not(.dark) .glass-card, :not(.dark) .bubble-section {
-    background: rgba(25, 25, 25, 0.95);
-    border: 2px solid rgba(255, 215, 0, 0.8);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  }
-  
-  :not(.dark) .glass-card-brown, :not(.dark) .bubble-card {
-    background: rgba(20, 20, 20, 0.98);
-    border: 2px solid rgba(255, 215, 0, 0.9);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Animation utilities */
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-    to {
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
-    }
-  }
-  
-  /* Typography improvements */
-  .text-display {
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-  
-  .text-heading {
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
+}
+
+@keyframes gold-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
